@@ -71,11 +71,11 @@
       "target": "api::event.event",
       "mappedBy": "createdby"
     },
-    "favoriteevents": {
+    "likes": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::event.event",
-      "mappedBy": "likedby"
+      "inversedBy": "likedby"
     }
   }
 }
