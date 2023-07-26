@@ -49,6 +49,25 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "likes"
+    },
+    "lat": {
+      "type": "float"
+    },
+    "lon": {
+      "type": "float"
+    },
+    "category": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "In-person",
+        "Virtual"
+      ]
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

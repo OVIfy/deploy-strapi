@@ -14,7 +14,8 @@
     "@strapi/plugin-users-permissions": "4.11.5",
     "@strapi/provider-upload-cloudinary": "^4.11.5",
     "@strapi/strapi": "4.11.5",
-    "pg": "8.8.0"
+    "pg": "8.8.0",
+    "strapi-plugin-fuzzy-search": "^2.0.4"
   },
   "author": {
     "name": "A Strapi developer"
