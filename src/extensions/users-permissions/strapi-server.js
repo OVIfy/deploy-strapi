@@ -6,17 +6,17 @@ module.exports = (plugin) => {
     let user = await strapi.entityService.findOne('plugin::users-permissions.user', currentUserID, {populate : {cover : true, profile : true}})
 
     
-    // console.log('user ', ctx.state.user)
+    console.log('user ', ctx.state.user)
     console.log('body ', ctx.request.body)
     console.log('files ', ctx.request.files)
     //update the file object if files are sent in the request
     if(ctx.request.files.profile){
       files["profile"] = ctx.request.files.profile
-      if(user.profile.id) deleted["profile"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
+      if(user.profile?.id) deleted["profile"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
     } 
     if(ctx.request.files.cover){
       files["cover"] = ctx.request.files.cover
-      if(user.cover.id) deleted["cover"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
+      if(user.cover?.id) deleted["cover"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
     } 
 
     //testing-----------------------------------------------------------------------------
@@ -37,7 +37,10 @@ module.exports = (plugin) => {
         }
       });
 
-      console.log('updatedUser ', updatedUser, 'deleted ', deleted)
+      console.log('updatedUser ', updatedUser, 'deleted ', deleted);
+      ctx.response.status = 201;
+      ctx.send({data : updatedUser});
+
     }catch(e){
       console.log(e.message, e.msg)
     }
