@@ -12,11 +12,11 @@ module.exports = (plugin) => {
     //update the file object if files are sent in the request
     if(ctx.request.files.profile){
       files["profile"] = ctx.request.files.profile
-      if(user.profile?.id) deleted["profile"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
+      if(user.profile?.id) deleted["profile"] = strapi.entityService.delete('plugin::upload.file', user.profile.id)
     } 
     if(ctx.request.files.cover){
       files["cover"] = ctx.request.files.cover
-      if(user.cover?.id) deleted["cover"] = await strapi.entityService.delete('plugin::upload.file', user.profile.id)
+      if(user.cover?.id) deleted["cover"] = strapi.entityService.delete('plugin::upload.file', user.cover.id)
     } 
 
     //testing-----------------------------------------------------------------------------

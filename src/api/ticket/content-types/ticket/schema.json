@@ -23,6 +23,31 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "tickets"
+    },
+    "type": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
     }
   }
 }
