@@ -86,6 +86,9 @@
     },
     "tickettypes": {
       "type": "json"
+    },
+    "test": {
+      "type": "string"
     }
   }
 }
